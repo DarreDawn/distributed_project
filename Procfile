@@ -1,1 +1,2 @@
-web: java -jar build/libs/gradle-wrapper.jar
+web: java -Dserver.port=$PORT -jar build/libs/distrubuted_project.jar
+

@@ -35,8 +35,12 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 tasks.register("stage") {
-    dependsOn("build")
+    dependsOn("clean", "build")
+    doLast {
+        println("Staging the application!")
+    }
 }
+
 
 
 
