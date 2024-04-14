@@ -1,0 +1,54 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #E0EEEC;
+}
+
+header {
+    display: flex; /* 使用 flexbox 布局 */
+    align-items: center; /* 垂直居中所有子元素 */
+    justify-content: space-between; /* 使子元素分散对齐 */
+    padding: 10px;
+}
+
+#title {
+    font-size: 36px;
+    font-family: "Nanum Pen Script";
+    font-weight: normal;
+    color: #0A8992;
+    margin: 0;
+    margin-left: 20px;
+}
+.nav-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+.nav-link {
+    text-decoration: none;
+    color: #0A8992;
+    margin: 0 30px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.mood-board {
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#logout-button {
+    font-family: "Montserrat", sans-serif;
+    color: #0A8992;
+    width: 100px;
+    height: 40px;
+    border-radius: 60px;
+    background-color: transparent; /* 设置背景透明 */
+    border: 1px solid #0A8992; /* 设置边框颜色和宽度 */
+    cursor: pointer;
+    margin-right: 20px;
+}
