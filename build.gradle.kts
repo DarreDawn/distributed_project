@@ -1,8 +1,5 @@
 plugins {
     id("java")
-    id("com.github.johnrengelman.shadow") version "7.0.0"
-    id ("org.springframework.boot") version "2.4.5"
-    id ("io.spring.dependency-management") version "1.0.11.RELEASE"
 }
 
 group = "org.example"
@@ -17,11 +14,19 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("org.springframework.boot:spring-boot-starter-web")
 }
+tasks.jar {
+    archiveBaseName.set(rootProject.name) // JAR文件的基础名称
+    archiveVersion.set("1.0.0")           // JAR文件的版本
+    archiveClassifier.set("")             // 构建的分类符，通常对于主构建是空的
 
-tasks.shadowJar {
-    archiveBaseName.set("distributed_project")
-    archiveVersion.set("0.1.0")
-    archiveClassifier.set("")
+    from(sourceSets.main.get().output)
+
+    // 设置入口点，如果你有一个主类
+    manifest {
+        attributes(
+            "Main-Class" to "org.example.Main" // 替换为你的主类
+        )
+    }
 }
 
 tasks {
