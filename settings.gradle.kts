@@ -1,2 +1,2 @@
-rootProject.name = "distrubuted_project"
+rootProject.name = "distributed_project"
 

@@ -19,10 +19,16 @@ dependencies {
 }
 
 tasks.shadowJar {
-    archiveBaseName.set("your-app")
+    archiveBaseName.set("distributed_project")
     archiveVersion.set("0.1.0")
     archiveClassifier.set("")
 }
+tasks.jar {
+    archiveBaseName.set(rootProject.name)
+    archiveVersion.set("1.0.0")
+    archiveClassifier.set("")
+}
+
 
 tasks {
     register<Copy>("copyToLib") {
