@@ -10,24 +10,15 @@ body {
     flex-direction: column;
 }
 
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
 
 h1 {
     font-size: 64px;
     color: #0A8992;
-    font-family: "Nanum Pen Script", cursive;
-    margin-right: 10px; /* Adjust as needed */
-    margin-bottom: 0; /* To remove any default margin */
+    font-family: "Nanum Pen Script";
+    font-weight: normal;
+    margin-bottom: 70px; /* To remove any default margin */
 }
 
-#smiley-face {
-    margin-left: 10px; /* Adjust as needed */
-}
 
 .button {
     background-color: #3FC0C0;
@@ -41,11 +32,12 @@ h1 {
     margin: 4px 2px;
     cursor: pointer;
     width: 283px;
-    border-radius: 5px;
+    border-radius: 20px;
+
 }
 
 .login {
-    margin-bottom: 10px;
+    margin-bottom: 70px;
 }
 
 #decorative-shape {
