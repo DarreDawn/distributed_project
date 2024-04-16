@@ -65,7 +65,7 @@ h1 {
     position: relative;
 }
 
-input[type="email"], input[type="password"] {
+input[type="username"], input[type="password"] {
     width: 375px;
     padding: 15px;
     margin: 10px -10px;
