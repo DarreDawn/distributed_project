@@ -1,8 +1,8 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #E0EEEC;
-}
 
+}
 header {
     display: flex; /* 使用 flexbox 布局 */
     align-items: center; /* 垂直居中所有子元素 */
@@ -12,7 +12,7 @@ header {
 }
 
 #title {
-    font-size: 36px;
+    font-size: 40px;
     font-family: "Nanum Pen Script";
     font-weight: normal;
     color: #0A8992;
@@ -30,7 +30,7 @@ header {
     color: #0A8992;
     margin: 0 50px;
     font-family: "Montserrat", sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: normal;
     font-style: normal;
 }
@@ -52,4 +52,188 @@ header {
     border: 1px solid #0A8992; /* 设置边框颜色和宽度 */
     cursor: pointer;
     margin-right: 20px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row; /* 保持子元素水平排列 */
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+.left-panel {
+    /* 给左侧面板一个最大宽度，避免它在大屏幕上过于宽阔 */
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-tag-container {
+    max-width: 100%;
+    height: 55vh; /* 或您希望的具体高度值 */
+    background-color: #f8fbfb;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tag-selector {
+    max-width: 100%;
+    height: 30vh; /* 或您希望的具体高度值 */
+    background-color: #f8fbfb;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#post-content {
+    width: calc(100% - 20px);
+    height: 40vh;
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-bottom: 1.5px solid #0A8992;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    background-color: #f8fbfb;
+    z-index: 2;}
+
+.tag-selector h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    color: #0A8992;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1.5px solid #0A8992; /* 添加淡蓝色横线 */
+    padding-bottom: 10px;
+
+}
+.tags-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: start;
+    padding: 0px;
+}
+.tag {
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    background-color: #E0EEEC;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin: 0 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.tag:hover {
+    background-color: #CCE4E4;
+}
+
+#send-button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #0A8992;
+    color: white;
+    cursor: pointer;
+}
+
+.post-display {
+    /* 使得帖子展示区域能够填充剩余的空间 */
+    flex-grow: 1;
+    height: calc(100vh - 140px); /* 调整高度以适应头部和页面上下留白 */
+    overflow-y: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* 移除了宽度的计算值，flex-grow将负责扩展 */
+}
+
+.search-and-reading {
+    display: flex;
+    flex-direction: column;
+    width: calc(30vw - 40px); /* 根据左侧内容的宽度调整 */
+    height: calc(100vh - 100px); /* 调整以适应头部和页面的上下留白 */
+}
+
+#search-box {
+    width: 95%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 10px; /* 搜索框与文章列表之间的间隔 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.articles-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    gap: 20px;
+    overflow-y : auto; /* 启用垂直滚动条 */
+    padding-top: 10px;
+    padding-right: 20px;
+
+}
+
+/* 针对使用Webkit内核浏览器的样式 */
+.articles-container::-webkit-scrollbar {
+    display: none;
+}
+/* 针对Firefox的样式 */
+.articles-container {
+    scrollbar-width: none;
+}
+/* 为了确保在所有浏览器中内容都可以滚动，即使滚动条被隐藏 */
+.articles-container {
+    -ms-overflow-style: none; /* IE和Edge浏览器隐藏滚动条 */
+}
+
+
+.article-card {
+    display: flex;
+    flex-direction: column; /* 如果希望图像在左边，请改为row */
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* 为点击效果添加动画 */
+}
+
+.article-card:hover {
+    transform: translateY(-5px); /* 鼠标悬停时上移 */
+}
+
+.article-image {
+    width: 100%;
+    height: 200px; /* 根据需要调整 */
+    background-color: #eee; /* 用于没有图片时的占位符背景 */
+    background-size: contain;
+    background-position: center;
+}
+
+.article-content {
+    padding: 15px;
+}
+
+.article-content h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.article-content p {
+    color: #666;
+    font-size: 14px;
 }
