@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const tagOutput = document.getElementById('tag-output');
     const newLabelButton = document.getElementById('new-label-button'); // The button to add new label
     //const newLabelDisplay = document.getElementById('new-label-display'); // The display area for the new label
-
+    const searchBox = document.getElementById('search-box');
+    const searchButton = document.getElementById('search-button');
     // Event listener for the New label button
     newLabelButton.addEventListener('click', () => {
         const newLabel = prompt("Enter new label:");
@@ -30,6 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
+    searchButton.addEventListener('click', function() {
+        const searchTerm = searchBox.value.trim();
+        if (searchTerm) {
+            const wikiUrl = `https://en.wikipedia.org/wiki/${encodeURIComponent(searchTerm)}`;
+            window.open(wikiUrl, '_blank');  // Opens the Wikipedia page in a new tab
+        } else {
+            alert('Please enter a search term.');
+        }
+    });
 
     function handleTagClick() {
         if (this === newLabelButton) {

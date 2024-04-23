@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spiritual Rest Stop</title>
+    <link rel="stylesheet" href="css/talk_with_friend.css">
+</head>
+<body>
+<header>
+    <h1 id="title">Spiritual Rest Stop</h1>
+    <div class="nav-container">
+        <nav>
+            <a href="#" class="nav-link" id="mood-bazaar">Mood Bazaar</a>
+            <a href="#" class="nav-link" id="chat">Chat</a>
+            <a href="#" class="nav-link" id="reservations">Reservations</a>
+        </nav>
+    </div>
+    <button id="logout-button" onclick="location.href='start.html';">Log out</button>
+</header>
+
+<div class="main-content">
+    <div class="left-panel">
+        <div id="user-list-container" class="user-container">
+            <input type="text" id="user-search" placeholder="Search here" class="user-search"/>
+            <button id="search-button" class="search-button">Add new friend</button>
+            <div class="button-group">
+                <button id="friends" class="choose-button">Friends</button>
+                <button id="groups" class="choose-button">Groups</button>
+            </div>
+            <div id="user-list" class="list">
+                <!-- user will be listed here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ... other content ... -->
+</div>
+</body>
+</html>
