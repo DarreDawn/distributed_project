@@ -23,6 +23,11 @@
     <div class="left-panel">
         <div class="input-tag-container">
             <textarea id="post-content" placeholder="What's your feeling?"></textarea>
+            <button id="send-button">Send</button>
+            <div id="tag-output" class="tag-output">
+                <!-- This element is where the new label will be displayed -->
+                <div id="new-label-display">New label</div>
+            </div>
         </div>
         <div class="tag-selector">
             <h2>Tags</h2>
@@ -33,14 +38,14 @@
                 <button class="tag">+ Depressed</button>
                 <button class="tag">+ Anxious</button>
                 <button class="tag">+ Nervous</button>
-                <button class="tag">+ New label</button>
+                <button id="new-label-button" class="tag">+ New label</button>
             </div>
         </div>
     </div>
     <div class="post-display">
         <article class="post">
-            <h3>帖子标题</h3>
-            <p>帖子内容...</p>
+            <h3>Choose your mood</h3>
+            <p>Write down what you're feeling right now</p>
         </article>
     </div>
     <div class="search-and-reading">
@@ -92,7 +97,6 @@
     </div>
 </div>
 
-
-<script src="js/script.js"></script>
+<script src="js/homepage.js"></script>
 </body>
 </html>

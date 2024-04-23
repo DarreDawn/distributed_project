@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Montserrat", sans-serif;
     background-color: #E0EEEC;
 
 }
@@ -93,16 +93,44 @@ header {
 
 #post-content {
     width: calc(100% - 20px);
-    height: 40vh;
+    height: 30vh;
     display: block;
     margin-top: 20px;
     padding: 10px;
     border: none;
-    border-bottom: 1.5px solid #0A8992;
     font-family: "Montserrat", sans-serif;
     font-size: 20px;
     background-color: #f8fbfb;
     z-index: 2;}
+
+#send-button {
+    padding: 10px 20px; /* 或其他你希望的尺寸 */
+    font-size: 16px; /* 你可以调整字体大小 */
+    color: white; /* 按钮文字颜色 */
+    background-color: #0A8992; /* 按钮背景颜色 */
+    border: none; /* 没有边框 */
+    border-radius: 5px; /* 圆角的大小 */
+    cursor: pointer; /* 鼠标悬停时变成手指图标 */
+    margin-bottom: 20px; /* 在按钮和下方内容之间添加一些空间 */
+    outline: none; /* 移除点击时的轮廓 */
+    transition: background-color 0.3s ease;
+    position: relative;
+
+}
+#send-button::after {
+    content: ''; /* 伪元素需要content属性 */
+    position: absolute; /* 绝对定位相对于按钮 */
+    bottom: -15px; /* 将线位置设置在按钮下方5px处 */
+    left: 0; /* 从按钮左边缘开始 */
+    right: 0; /* 伸展到按钮右边缘 */
+    height: 1.5px; /* 线的粗细 */
+    background-color: #0A8992; /* 线的颜色 */
+    border-radius: 2px; /* 如果需要线条两端为圆角 */
+}
+
+#send-button:hover {
+    background-color: #087880; /* 鼠标悬停时按钮的背景颜色变深 */
+}
 
 .tag-selector h2 {
     font-family: "Montserrat", sans-serif;
@@ -133,8 +161,45 @@ header {
     cursor: pointer;
     transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
+.tag-output {
+    display: none;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    background-color: #E0EEEC; /* Same background color as .tag */
+    border-radius: 20px; /* Same border radius as .tag */
+    padding: 10px 15px; /* Same padding as .tag */
+    margin-top: 10px; /* This can stay unique for tag-output */
+    font-size: 15px; /* Same font size as .tag */
+
+    align-items: center;
+    justify-content: center; /* Center the text */
+    cursor: default; /* Change the cursor to default since it's not a button */
+}
+.new-label {
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    background-color: #E0EEEC;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin: 0 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+#new-label-display {
+    display: block; /* Ensure it is visible */
+    border: 1px solid #ccc; /* Example border */
+    padding: 10px; /* Example padding */
+    margin-top: 10px; /* Spacing above the div */
+    min-height: 20px;
+}
+
 
 .tag:hover {
+    background-color: #CCE4E4;
+}
+
+.new-label:hover {
     background-color: #CCE4E4;
 }
 
@@ -148,17 +213,40 @@ header {
     cursor: pointer;
 }
 
+/* Remove or adjust existing .post styles as necessary */
 .post-display {
-    /* 使得帖子展示区域能够填充剩余的空间 */
     flex-grow: 1;
-    height: calc(100vh - 140px); /* 调整高度以适应头部和页面上下留白 */
-    overflow-y: auto;
-    background-color: #fff;
-    padding: 20px;
+    max-height: calc(100vh - 140px);
+    flex-direction: column;
+    overflow-y : auto;
+    align-items: center; /* Center children horizontally */
+    justify-content: flex-start; /* Align children to the start of the container */
+    padding: 20px 0;
+}
+/* 针对使用Webkit内核浏览器的样式 */
+.post-display::-webkit-scrollbar {
+    display: none;
+}
+/* 针对Firefox的样式 */
+.post-display {
+    scrollbar-width: none;
+}
+/* 为了确保在所有浏览器中内容都可以滚动，即使滚动条被隐藏 */
+.post-display {
+    -ms-overflow-style: none; /* IE和Edge浏览器隐藏滚动条 */
+}
+
+
+.post {
+    width:560px ; /* or a specific width */
+    background-color: #f8fbfb;
+    margin-bottom: 20px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* 移除了宽度的计算值，flex-grow将负责扩展 */
+    /* Additional styles */
 }
+
 
 .search-and-reading {
     display: flex;
