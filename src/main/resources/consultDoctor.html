@@ -23,8 +23,30 @@
         <div id="doctors-list-container" class="doctors-container">
             <input type="text" id="doctor-search" placeholder="Search here" class="doctor-search"/>
             <div id="doctors-list" class="list">
-                <!-- Doctors will be listed here -->
+                <div class="doctor-item">
+                    <button type="button" data-doctor-id="doctor1"> <!-- Add a data attribute for identification -->
+                        <div class="doctor-item-circle" style="background-color: #FFFFFF;"></div> <!-- Replace #colorCode with actual color -->
+                        <span>Doctor Name</span>
+                    </button>
+                </div>
             </div>
+        </div>
+    </div>
+    <div>
+        <div class="right-panel">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h2>Chat</h2>
+                </div>
+                <div id="chat-box" class="chat-box">
+                    <!-- Chat messages will appear here -->
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" id="chat-input" placeholder="Type a message..." />
+                    <button id="send-button">Send</button>
+                </div>
+            </div>
+
         </div>
     </div>
 

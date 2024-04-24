@@ -11,9 +11,11 @@ repositories {
 
 dependencies {
     implementation("javax.servlet:javax.servlet-api:4.0.1")
+    implementation("jakarta.websocket:jakarta.websocket-api:2.0.0")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
+
 tasks.jar {
     archiveBaseName.set(rootProject.name) // JAR文件的基础名称
     archiveVersion.set("1.0.0")           // JAR文件的版本

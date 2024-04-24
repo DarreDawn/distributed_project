@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Montserrat;
     background-color: #E0EEEC;
 }
 body, html {
@@ -60,20 +60,24 @@ header {
     margin-right: 20px;
 }
 
+.main-content {
+    display: flex;
+    height: calc(100vh - 60px);
+    flex-direction: row;
+    justify-content: center;/* Adjust this value to the height of your header */
+    padding: 20px;
+    gap: 10px; /* If you want some space between the panels */
+}
+.left-panel{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    background-color: #f8fbfb;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 12px;
 
-
-/* Left Panel styles */
-.left-panel {
-    width: 406px; /* As per the dimensions provided */
-    height: 710px; /* As per the dimensions provided */
-    overflow-y: auto; /* Enables scrolling within the left panel */
-    overflow-x: hidden; /* Hides horizontal scrollbar */
-    position: fixed; /* Fixes the position of the left panel */
-    left: 22px; /* X position */
-    top: 85px; /* Y position */
-    background-color: #FFFFFF; /* Set background color to white */
-    border-radius: 18px; /* Rounded corners as per your images */
-    padding-left: 12px;
 }
 
 /* Doctor item styles */
@@ -87,6 +91,25 @@ header {
     box-sizing: border-box;
     border-bottom: 1px solid #B3B3B3; /* Color of bottom edge of each doctor item */
 }
+.doctor-item button {
+    /* Styles to reset button default styles and match your design */
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 20px; /* Adjust to match your layout */
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: inherit;
+}
+
+.doctor-item button:hover {
+    /* Hover styles for the button */
+    background-color: #f0f0f0;
+}
+
+
 
 .doctor-item-circle {
     width: 50px; /* Adjust the size of the circle */
@@ -107,5 +130,75 @@ header {
     justify-content: center;
 }
 
+.chat-container {
+    width: 950px; /* Or a fixed width if you prefer */
+    height: calc(100vh - 90px); /* Adjust the height as needed */
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px; /* Spacing between panels, if desired */
+    background-color: #f8fbfb;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+.chat-container h2{
+    margin-left: 20px;
+}
+.chat-header {
+    padding: 10px;
+    border-bottom: 1px solid #0A8992;
+}
+.chat-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    margin: 10px;
+}
+
+.chat-input-container {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #0A8992;
+}
+
+#chat-input {
+    flex-grow: 1;
+    border-radius: 18px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+#send-button {
+    background-color: #0A8992;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 18px;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #087880;
+}
+
+.chat-box {
+    /* Existing styles */
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* Add some padding */
+}
+
+.message {
+    background-color: #f1f1f1; /* Example message bubble color */
+    margin-bottom: 10px; /* Spacing between messages */
+    padding: 8px; /* Padding inside message bubble */
+    border-radius: 4px; /* Rounded corners for message bubble */
+    width: fit-content; /* Make the bubble fit its content */
+    align-self: flex-start; /* Align to the start of the flex container */
+}
+
+
+/* You might need to adjust other parts of your layout to make room for the chat interface */
 
 /* Make sure to include other styles from your 'consultDoctor.css' to keep the design consistent */
