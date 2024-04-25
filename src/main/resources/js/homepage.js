@@ -31,15 +31,29 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
+    // 绑定点击事件到搜索按钮
     searchButton.addEventListener('click', function() {
         const searchTerm = searchBox.value.trim();
         if (searchTerm) {
-            const wikiUrl = `https://en.wikipedia.org/wiki/${encodeURIComponent(searchTerm)}`;
-            window.open(wikiUrl, '_blank');  // Opens the Wikipedia page in a new tab
+            fetch(`https://en.wikipedia.org/w/rest.php/v1/search/page?q=${encodeURIComponent(searchTerm)}&limit=1`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.pages && data.pages.length > 0) {
+                        const page = data.pages[0];
+                        window.open(`https://en.wikipedia.org/wiki/${page.title}`, '_blank');
+                    } else {
+                        alert('No results found.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching data: ', error);
+                    alert('Failed to fetch results.');
+                });
         } else {
             alert('Please enter a search term.');
         }
     });
+
 
     function handleTagClick() {
         if (this === newLabelButton) {
